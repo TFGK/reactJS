@@ -1,0 +1,76 @@
+html,
+body,
+#google-map {
+    width: 1000px;
+    height: 720px;
+    margin: 5;
+    top: 10%;
+    left: 10%;
+    padding: 0;
+}
+
+#search-panel {
+    position: absolute;
+    left: 78%;
+    top: 15%;
+    z-index: 5;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    padding-left: 10px
+}
+
+/* marker tool bar */
+#floating-panel {
+    position: absolute;
+    left: 75%;
+    top: 23%;
+    z-index: 5;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    /* font-family: 'Roboto', 'sans-serif'; */
+    /* line-height: 30px; */
+    padding-left: 10px;
+}
+
+#location_save {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    z-index: 5;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    padding-left: 10px
+}
+
+
+
+/* Location_form css */
+.main.continer{
+    margin-top: 60px;
+}
+
+.submit-button {
+    margin-top: 24px !important;
+    float: right;
+}
+
+
+/* Location_list css */
+
+.data {
+    margin-top: 15px;
+}
+
+thead tr th {
+    background: #FFFFFF !important;
+}
+
+.ui.inverted.dimmer {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
