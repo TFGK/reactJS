@@ -1,72 +1,201 @@
 html,
 body,
-#google-map {
-    width: 1000px;
-    height: 720px;
-    margin: 5;
-    top: 10%;
-    left: 10%;
-    padding: 0;
+#root,
+.main,
+.container,
+.route
+{
+    height: 100%;
+}
+.location{
+    margin-top: 5%;
+    padding-top: 5%;
+    height: 70%;
 }
 
-#search-panel {
+
+.aeye_navbar{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    z-index:1;
+}
+.navbar_opac{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    background-color: black;
+    opacity:0.5;
+    /* border-radius: 15px; */
+    z-index:1;
+  }
+
+.mapbox p{
+    font-size: large;
     position: absolute;
-    left: 78%;
-    top: 15%;
-    z-index: 5;
-    background-color: #FFFFFF;
-    padding: 5px;
-    border: 1px solid black;
-    text-align: center;
-    padding-left: 10px
+    z-index: 1;
+    background-color: white ;
 }
 
-/* marker tool bar */
-#floating-panel {
-    position: absolute;
-    left: 75%;
-    top: 23%;
-    z-index: 5;
-    background-color: #FFFFFF;
-    padding: 5px;
-    border: 1px solid black;
-    text-align: center;
-    /* font-family: 'Roboto', 'sans-serif'; */
-    /* line-height: 30px; */
-    padding-left: 10px;
+.ui.container{
+    max-width: 1900px;
 }
 
-#location_save {
-    position: absolute;
-    left: 80%;
-    top: 50%;
-    z-index: 5;
-    background-color: #FFFFFF;
-    padding: 5px;
-    border: 1px solid black;
+.redbutton{
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #e0e1e2 none;
+    /* color: rgba(0,0,0,.6); */
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    /* margin: 0 .25em 0 0; */
+    padding: .78571429em 1.5em .78571429em;
+    text-transform: none;
+    /* text-shadow: none; */
+    font-weight: 700;
+    line-height: 1em;
+    font-style: normal;
     text-align: center;
-    padding-left: 10px
+    text-decoration: none;
+    border-radius: .28571429rem;
+    margin-top: 24px !important;
+    /* float: right; */
+    font-size: 1rem;
+    background-color: #db2828;
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+    box-shadow: 0 0 0 0 rgba(34,36,38,.15)inset;
 }
-
-
 
 /* Location_form css */
-.main.continer{
-    margin-top: 60px;
+
+.toggle{
+    right: 11em;
+    position: absolute;
+    top: 4em;
+}
+.form{
+    position: absolute;
+    /* margin: 0 auto; */
+    top: 0.5em;
+    display: block;
+    font-size: 1rem;
+    right: -25em;
+    /* max-width: 100%; */
+    box-sizing: inherit;
+    /* transform: translateX(-50%); */
 }
 
-.submit-button {
+.form .fields{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    margin: 0 -.5em 1em;
+}
+
+.fields{
+    background-color: white;
+    padding: 7px;
+    border-radius: 10px;
+}
+*, :after :before {
+    box-sizing: inherit;
+}
+
+.form
+.five.wide.field{
+    width: 31.25% !important;
+}
+
+.five{
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.form
+.fields>.field:first-child{
+    border-left: none;
+    box-shadow: none;
+}
+.form .fields:last-child .field {
+    margin-bottom: 0;
+}
+
+.form .fields>.field {
+    -webkit-box-flex: 0;
+}
+
+.form .fields .field {
+    clear: both;
+}
+
+.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0,0,0,.87);
+    font-size: .92857143em;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.form input[type=text]{
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    margin: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    /* tap-highlight-color: rgba(255,255,255,0); */
+    line-height: 1.21428571em;
+    padding: .67857143em 1em;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    border-radius: .28571429rem;
+    -webkit-box-shadow: 0 0 0 0 transparent inset;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+    width: 100%;
+    vertical-align: top;
+    overflow: visible;
+}
+
+
+.main{
+    position: relative;
+}
+
+.blue .submit-button {
     margin-top: 24px !important;
     float: right;
+    margin-left: 3px !important;
 }
 
 
 /* Location_list css */
 
 .data {
-    margin-top: 15px;
+    position: absolute;
+    top: 7em;
+    right: -16em;
+    display: block;
+    padding: 4px;
 }
-
+.ui table{
+    border-radius: 10px !important;
+}
 thead tr th {
     background: #FFFFFF !important;
 }

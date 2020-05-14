@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-export default class Location_form extends Component {
+class Location_form extends Component {
     state = {
         form: {location_name: "",
                location_explain: "",
@@ -25,7 +25,7 @@ export default class Location_form extends Component {
                 btnClass: "ui orange button submit-button"
 
             })
-            //console.log("update");
+            console.log("update");
         }
     };
 
@@ -79,29 +79,46 @@ export default class Location_form extends Component {
     clearFormFields = () => {
         // change form state
         this.setState({
-            form: {location_name: "",
-               location_explain: "",
-               location_lat: "", 
-               location_lng: "",
-               isEdit : false
-            }
-        });
-
+            form: {
+                location_name: "",
+                location_explain: "",
+                location_lat: "", 
+                location_lng: "",
+                isEdit : false
+            }}
+        );
         //clear form fields
         document.querySelector(".form").reset();
     };
 
-    //eidt 버튼 눌렀을 때 저장되어있는 data form태그에 불러오는 함수
     handleChange = event => {
-        const { name, value } = event.target;
-        let form = this.state.form;
-        form[name] = value;
-        this.setState({ form });
+        console.log('언제열리지 이게');
+        console.log(this.state.form.isEdit);
+        if(this.state.form.isEdit == true) {
+            const { name, value } = event.target;
+            let form = this.state.form;
+            form[name] = value;
+            console.log('ttttt', form);
+            this.setState({ form });
+        } else {
+            let form = {
+                location_name: document.getElementsByName("location_name")[0].value,
+                location_explain: document.getElementsByName("location_explain")[0].value,
+                location_lat: document.getElementsByName("location_lat")[0].value, 
+                location_lng: document.getElementsByName("location_lng")[0].value,
+            }
+            console.log('ttttt', form);
+            this.setState({ form });
+        }
+        //form[name] = value;
+        //this.setState({ form });
+        console.log('if문 종료');
+
     };
 
     render() {
         return (
-        <form className="ui form">
+        <form className="form">
             <div className="fields">
                 <div className="five wide field">
                     <label>Location Name</label>
@@ -151,9 +168,14 @@ export default class Location_form extends Component {
                     <button className={this.state.btnClass} onClick={this.onFormSubmit}>
                         {this.state.btnName}
                     </button>
+                    <button className="redbutton cancle-button" onClick={this.clearFormFields}>
+                        Cancel
+                    </button>
                 </div>
             </div>
         </form>
         );
     }
 }
+
+export default Location_form;

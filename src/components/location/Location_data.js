@@ -22,7 +22,7 @@ export default class Location_data extends Component {
                 <td>{location_lng}</td>
                 <td>
                     <button className="mini ui blue button" onClick={this.onEdit}>Edit</button>
-                    <button className="mini ui red button" onClick={this.onDelete}>Delete</button>
+                    <button className="mini ui red button deleted_button" onClick={this.onDelete}>Delete</button>
                 </td>
             </tr>
         );

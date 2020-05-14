@@ -1,5 +1,5 @@
 import React from "react";
-import '../components/css/Building.css';
+import './css/Building.css';
 
 function Building(){
   return(

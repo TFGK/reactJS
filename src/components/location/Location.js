@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+//구글맵 API Import
+import Maps from './Maps';
 
-import './css/location.css';
+import '../css/location.css';
 
 import Location_form from './Location_form';
 import Location_list from './Location_list';
-import Loader from './Loader';
+import Loader from '../Loader';
 
 export default class Location extends Component {
     state = {
+        on:false,
         location_datas: [],
         location_data: {},
         loader : false,
-        url: 'http://localhost:81/React/public/api/locations'
+        url: "/api/locations"
     };
-
+    
     componentDidMount() {
         this.getDatas();
     };
@@ -63,7 +66,6 @@ export default class Location extends Component {
     };
 
     onFormSubmit = data => {
-        //console.log('location', data);
         if(data.isEdit) {
             //is edit true
             this.editDatas(data);
@@ -74,35 +76,27 @@ export default class Location extends Component {
     };
 
     onDelete = id => {
-        //console.log('location', id);
         this.deleteDatas(id);
     }
 
     onEdit = data => {
-        //console.log('location', data);
         this.setState({ location_data: data });
-
+        this.setState({
+            on:!this.state.on
+        })
     }
 
     render() {
         return (
-            <div>
-                <div className="ui fixed inverted menu">
-                    <div className="ui container">
-                        <a href="/#" className="header item">
-                            React js CRUD with Laravel API
-                        </a>
-                    </div>
-                </div>
-
-                <div className="ui main container">
-                    <Location_form 
-                    location_data={this.state.location_data}
-                    onFormSubmit={this.onFormSubmit}
-                    />
-                    
+            <div className="location">
+                <div className="ui main">
                     {this.state.loader ? <Loader /> : ""}
+                    <Maps />
 
+                    <Location_form
+                        location_data={this.state.location_data}
+                        onFormSubmit={this.onFormSubmit} 
+                    />
                     <Location_list
                         location_datas={this.state.location_datas}
                         onDelete={this.onDelete}
