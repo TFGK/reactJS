@@ -5,7 +5,7 @@ class QnA extends Component {
     render() {
         return (
             <div className="container">
-                dd
+                
             </div>
         )
     }

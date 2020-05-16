@@ -92,13 +92,13 @@ class Location_form extends Component {
     };
 
     handleChange = event => {
-        console.log('언제열리지 이게');
-        console.log(this.state.form.isEdit);
+        // console.log('언제열리지 이게');
+        // console.log(this.state.form.isEdit);
+
         if(this.state.form.isEdit == true) {
             const { name, value } = event.target;
             let form = this.state.form;
             form[name] = value;
-            console.log('ttttt', form);
             this.setState({ form });
         } else {
             let form = {
@@ -107,7 +107,7 @@ class Location_form extends Component {
                 location_lat: document.getElementsByName("location_lat")[0].value, 
                 location_lng: document.getElementsByName("location_lng")[0].value,
             }
-            console.log('ttttt', form);
+            //console.log('ttttt', form);
             this.setState({ form });
         }
         //form[name] = value;
